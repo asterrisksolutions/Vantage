@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  color: white;
+}
+
+.top-bar {
+  background: rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar h1 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#logoutBtn {
+  padding: 6px 14px;
+  background: linear-gradient(90deg, #7c3aed, #c026d3);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85em;
+}
+
+#logoutBtn:hover {
+  opacity: 0.85;
+}
+
+.dashboard {
+  padding: 25px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 18px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.approvals, .changes {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.approvals h2, .changes h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.approvals ul, .changes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.approval_info, .changes_info {
+  margin-bottom: 12px;
+  padding: 12px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+}
+
+.approve-btn, .view-btn, .approve-change-btn {
+  margin-left: 10px;
+  margin-top: 8px;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.approve-btn {
+  background: #22c55e;
+}
+
+.approve-btn:hover {
+  background: #16a34a;
+}
+
+.view-btn {
+  background: #3b82f6;
+}
+
+.view-btn:hover {
+  background: #2563eb;
+}
+
+.approve-change-btn {
+  background: linear-gradient(90deg, #7c3aed, #c026d3);
+}
+
+.approve-change-btn:hover {
+  opacity: 0.85;
+}
+
+.system-info {
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 15px;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.85em;
+  margin-top: 40px;
+}
