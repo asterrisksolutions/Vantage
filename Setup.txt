@@ -1,0 +1,13 @@
+git clone httpsgithub.comYOUR_USERNAMEYOUR_REPO.git
+cd YOUR_REPOphp-laravel
+
+composer install
+npm install
+npm run build
+
+cp .env.example .env
+php artisan keygenerate
+
+touch databasedatabase.sqlite      # or Windows equivalent
+php artisan migratefresh --seed    # Recreates exact database state
+php artisan serve
