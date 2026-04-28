@@ -59,6 +59,9 @@ class AuthController extends Controller
         if (Auth::attempt(['email' => $credentials['username'], 'password' => $credentials['password']])) {
             // Regenerate session ID to prevent session fixation attacks
             $request->session()->regenerate();
+            
+            // Set session timeout tracking
+            $request->session()->put('last_activity_time', time());
 
             // Reset security metrics on successful login
             if ($user) {

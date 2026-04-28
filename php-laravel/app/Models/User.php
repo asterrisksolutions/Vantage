@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Notifications\PasswordResetNotification;
+use App\Notifications\PasswordResetOtp;
 
 /**
  * User Model
@@ -36,6 +38,30 @@ class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
+
+    /**
+     * Send a password reset notification using token method.
+     *
+     * @param string $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token): void
+    {
+        $expiresIn = config('auth.passwords.users.expire', 15);
+        $this->notify(new PasswordResetNotification($token, $expiresIn));
+    }
+
+    /**
+     * Send a password reset notification using OTP method.
+     *
+     * @param string $otp
+     * @return void
+     */
+    public function sendPasswordResetOtp(string $otp): void
+    {
+        $expiresIn = config('auth.passwords.users.expire', 15);
+        $this->notify(new PasswordResetOtp($otp, $expiresIn));
+    }
 
     /**
      * Define the relationship between User and Role.

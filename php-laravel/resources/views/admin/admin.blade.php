@@ -22,14 +22,12 @@
 
   <div class="main-container">
     <aside class="sidebar">
-      <h2>Admin Panel</h2>
+      <h2>MENU</h2>
       <ul>
-        <li>sidebar1</li>
-        <li>sidebar2</li>
-        <li class="active">User Management</li>
-        <li>sidebar3</li>
-        <li>sidebar4</li>
-        <li>sidebar5</li>
+        <li onclick="window.location='{{ route('admin.dashboard') }}'">Dashboard</li>
+        <li onclick="window.location='{{ route('admin.users') }}'">User Management</li>
+        <li onclick="window.location='{{ route('admin.audit-logs') }}'">Audit Logs</li>
+        <li onclick="window.location='{{ route('admin.password.reset.form') }}'">Password Reset</li>
       </ul>
     </aside>
 

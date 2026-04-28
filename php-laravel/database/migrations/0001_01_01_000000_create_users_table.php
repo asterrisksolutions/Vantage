@@ -48,10 +48,13 @@ return new class extends Migration
         // PASSWORD RESET TOKENS TABLE
         // ============================================================
         // Laravel's default table for password reset functionality.
-        // Stores temporary tokens sent to users via email.
+        // Extended to support both token and OTP methods.
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();    // Email address requesting reset
-            $table->string('token');               // Secure random token
+            $table->string('token');               // Secure random token or OTP
+            $table->enum('method', ['token', 'otp'])->default('token'); // Reset method
+            $table->timestamp('expires_at');       // Token/OTP expiration time
+            $table->timestamp('used_at')->nullable(); // When token was used
             $table->timestamp('created_at')->nullable(); // Token creation time (for expiry)
         });
 

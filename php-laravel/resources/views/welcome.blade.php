@@ -23,7 +23,7 @@
         <p style="color:#fc8181; font-size:0.9em;">{{ $errors->first() }}</p>
       @endif
 
-      <p class="forgot">Forgot your password?</p>
+      <p class="forgot"><a href="{{ route('password.request') }}" style="color: inherit; text-decoration: none;">Forgot your password?</a></p>
 
 
       <button type="submit">LOG IN</button>
